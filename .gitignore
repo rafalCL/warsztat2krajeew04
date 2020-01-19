@@ -1,6 +1,7 @@
 # My additions
 .idea/
 *.iml
+out/
 
 # Compiled class file
 *.class
