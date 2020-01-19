@@ -4,6 +4,7 @@ import pl.coderslab.warsztat2krajeew04.dao.UserDao;
 import pl.coderslab.warsztat2krajeew04.model.User;
 
 import javax.jws.soap.SOAPBinding;
+import java.util.Scanner;
 
 public class UserController {
     private static UserDao userDao = new UserDao();
@@ -12,7 +13,14 @@ public class UserController {
         System.out.println("Display Menu"); // separate private method
         // todo below only example - you must implement handling menu
         //  and calling addUser and other methods
-        addUser();
+//        switch (userOption){
+//            case 1:
+//                //        addUser();
+//            case 2:
+                getUser();
+//        }
+
+
     }
 
     private static void addUser(){
@@ -24,5 +32,13 @@ public class UserController {
         } else {
             System.out.println("Błąd zapisu do bazy!");
         }
+    }
+
+    private static void getUser() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("get user id from console");
+        User u = userDao.read(1);
+        System.out.println(u.getEmail());
     }
 }
